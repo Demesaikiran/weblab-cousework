@@ -1,0 +1,129 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+  }
+  
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 0.65;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .bgimg-1 {
+    background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--rx3ZbK7S--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/zh2w7nufrewbbh2n9zjv.png");
+    height: 100%;
+  }
+  
+  .caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+  }
+  
+  .caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+  
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+  }
+
+
+  .nav {
+    /* list-style-type: none; */
+    /* padding: 0; */
+    overflow: hidden;
+    /* width: 100% ; */
+    /* background-size: cover; */
+  }
+
+.nav li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* li a:hover:not(.active) {
+    background-color: #111;
+  } */
+
+h3 {
+    text-align: center;
+}
+
+
+#navli {
+    float: left;
+    margin-left: 2px;
+    /* margin-right: 500px; */
+    text-align: center;
+    font-size: x-large;
+}
+
+#navh3 {
+    color: yellow;
+}
+
+div {
+    width: 100%;
+    height: 650px;
+}
+
+
+body {
+    background-image: "./images/dsbackground.jpeg";
+}
+
+#bg-blur {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-abstract-technology-background-concept-speed-movement-pattern-and-motion-blur-over-image_435017.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    padding: 0;
+
+}
+
+#bg-text {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+    margin-top: 200px;
+    text-align: center;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+.bg {
+    /* The image used */
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-abstract-technology-background-concept-speed-movement-pattern-and-motion-blur-over-image_435017.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

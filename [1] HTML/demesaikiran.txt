@@ -1,0 +1,17 @@
+<h3><span id="a">Demesaikiran@root</span>:<span id="b">~</span><span id="c">$</span> cat demesaikiran.txt </h3>
+<h2>Hi, I'm Deme Sai Kiran.<!-- laglaglaglaglaglaglaglaglaglaglaglag -->
+<p>Freshman student at <a href = "https://uohyd.ac.in/"> University of Hyderabad, Hyderabad.</a> <!-- slightdelayhere--><!-- longlongcomment --> 
+ <br>Pursuing <a href = "https://scis.uohyd.ac.in/Academic/Programmes/mtechcs2016_program.php#mtechcs_program.php"> M.Tech in Computer Science and Engineering.</a> </p><!-- qowifjqwoeijfoqweijfqweoifjqweofijqweoqwoijefoqwijefoijfqiwoefjj --><p>I love doing competitive programming. Check me out on <a href="https://www.hackerrank.com/demesaikiran84">HackerRank</a>, <a href = "https://www.codechef.com/users/demesaikiran">Codechef </a> and <a href="https://binarysearch.com/@/demesaikiran">BinarySearch</a>.</p><!- oqwipjefqwioefjwioqfjoiqwjfeioqwjefoi --><p>My other interests are Cybersecurity, Machine Learning and Neural-networks. </p><!-- owlsqweoifjqwoefijqwoeifjqwoefijwef --><p> Resume - <a href = "https://drive.google.com/file/d/1bhp9dueGqPUnX-5StrMKK0bEGiuw48O_/view?usp=sharing">Click here</a> </p> <!-- owlsqweoifjqwoefijqwoeifjqwoefijwef --> </h2>
+
+<h3><span id="a">Demesaikiran@root</span>:<span id="b">~</span><span id="c">$</span> Contact Me </h3><!-- slightdelayhere--><!-- longlongcomment --> 
+<h2>Email addresses : <a href="mailto:demesaikiran@gmail.com">demesaikiran@gmail.com</a>; <a href="mailto:21mcmt19@uohyd.ac.in">21mcmt19@uohyd.ac.in</a>
+
+Phone Number : <a href = "tel: +918074832059"> +91-8074832059 </a>
+
+Linked-In : <a href = "https://www.linkedin.com/in/demesaikiran"> Deme Sai Kiran</a> <br/> </h2>
+
+<h3><span id="a">Demesaikiran@root</span>:<span id="b">~</span><span id="c">$</span> Fun Fact about me </h3>
+<h2> My first lover is Mathematics :P </h2>
+
+<h3><span id="a">Demesaikiran@root</span>:<span id="b">~</span><span id="c">$</span> Quote of the Day </h3>
+<h2> Reading (learning) is the ultimate meta-skill and can be traded for anything else. </h2>

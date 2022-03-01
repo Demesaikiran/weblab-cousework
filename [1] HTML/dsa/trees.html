@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NO_P Techify</title>
+    <link rel="stylesheet">
+    <link rel="shortcut icon" href="no-p.png" type="image/x-icon">
+</head>
+
+<body>
+    <table>
+        <td>
+            <p>
+                <font face = "Comic sans MS" size = "5" color = blue>
+                    Binary Search Trees
+                </font>
+            </p>
+                <font face = "Comic sans MS" size = "4" color = Gray>
+                    Binary Search Tree is a node-based binary tree data structure which has the following properties:
+                </font>
+                <br><br><br>
+        </td>
+    </table>
+        <center><img src="https://media.geeksforgeeks.org/wp-content/uploads/BSTSearch.png"></center><br>
+        <font face = "Comic sans MS" size = "4" color = Gray>
+            <ul>
+                <li>The left subtree of a node contains only nodes with keys lesser than the node’s key.</li><br>
+                <li>The right subtree of a node contains only nodes with keys greater than the node’s key.</li><br>
+                <li>The left and right subtree each must also be a binary search tree.</li><br>            
+            </ul>
+            <br>
+            <p>
+                The three core operations on a BST are search, insert, and delete. For this lecture, we will assume that the
+                BST stores distinct numbers, i.e. we will identify the objects with their names and we will have each name
+                be represented by a number.
+            </p>
+            <br>
+            <font face = "Comic sans MS" size = "4" color = blue>
+                Search:
+            </font>
+                <p>
+                    To search for an element, we start at the root and compare the key of the node we are looking at to the
+                element we are searching for. If the node’s key matches, then we are done. If not, we recursively search in
+                the left or right subtree of our node depending on whether this node was too large or too small, respectively.
+                If we ever reach NIL, we know the element does not exist in our BST.
+            </p>
+            <font face = "Comic sans MS" size = "4" color = blue>
+                Delete:
+            </font>
+            <p>
+                Deletion is a bit more complicated. To delete a node x that exists in our tree, we consider several cases:
+                <ul>
+                    <li>If x has no children, we simply remove it by modifying its parent to replace x with NIL.</li><br>
+                    <li>If x has only one child c, either left or right, then we elevate c to take x’s position in the tree by
+                        modifying the appropriate pointer of x’s parent to replace x with c, and also fixing c’s parent pointer
+                        to be x’s parent.</li><br>
+                    <li>
+                        If x has two children, a left child c1 and right child c2, then we find x’s successor z and have z take
+                        x’s position in the tree. Notice that z is in the subtree under x’s right child c2 and we can find it by
+                        running z ← search(c2, key(x)). Note that since z is x’s successor, it doesn’t have a left child, but it
+                        might have a right child. If z has a right child, then we make z’s parent point to that child instead
+                        of z (also fixing the child’s parent pointer). Then we replace x with z, fixing up all relevant pointers.:
+                        the rest of x’s original right subtree becomes z’s new right subtree, and x’s left subtree becomes z’s
+                        new left subtree.
+                    </li><br>
+                </ul> 
+                
+                For simplicity, we will leave out case 1 and the symmetric case of case 2 (swapping left and right).
+                In case 3, x has two children, so we find the smallest element in its right subtree (its successor, call it z)
+                and replace x with z. Clearly z does not have a left child, otherwise it could not be x’s successor. Therefore
+                we can cut z out, replacing it with its right subtree (case 1 or 2, which we already know how to handle),
+                and then swap x out for z.
+            </p>
+            
+        </font>
+        
+    <center><iframe src="https://www.youtube.com/embed/sXABdGalFNg" width="560" height="315" frameborder="0" style="margin-top: 70px;"></iframe></center>
+    <table>
+        <td>
+            <p>
+                <font face = "Comic sans MS" size = "5" color = blue>
+                    Red-Black trees
+                </font>
+            </p>
+                <font face = "Comic sans MS" size = "4" color = Gray>
+                    A red-black tree is a kind of self-balancing binary search tree where each node has an extra bit, and that bit is often interpreted as the colour (red or black). These colours are used to ensure that the tree remains balanced during insertions and deletions. Although the balance of the tree is not perfect, it is good enough to reduce the searching time and maintain it around O(log n) time, where n is the total number of elements in the tree. This tree was invented in 1972 by Rudolf Bayer. 
+                    <br>
+                    It must be noted that as each node requires only 1 bit of space to store the colour information, these types of trees show identical memory footprint to the classic (uncoloured) binary search tree. 
+
+                <br><br><br>
+                
+                <ul>
+                    <li>
+                        Every node has a colour either red or black.
+                    </li>
+                    <li>
+                        The root of the tree is always black.
+                    </li>
+                    <li>
+                        There are no two adjacent red nodes (A red node cannot have a red parent or red child).
+                    </li>
+                    <li>
+                        Every path from a node (including root) to any of its descendants NULL nodes has the same number of black nodes.
+                    </li>
+                    <li>
+                        All leaf nodes are black nodes.
+                    </li>
+                </ul>
+            </font><br>
+        </font>
+        <font face = "Comic sans MS" size = "4" color = blue>
+            Interesting points about Red-Black Tree:
+        </font>
+        <font face = "Comic sans MS" size = "4" color = Gray>
+            <ul>
+                <li>
+                    Black height of the red-black tree is the number of black nodes on a path from the root node to a leaf node. Leaf nodes are also counted as black nodes. So, a red-black tree of height h has black height >= h/2.
+                </li>
+                <li>Height of a red-black tree with n nodes is h<= 2 log2(n + 1).
+                </li>
+                <li>All leaves (NIL) are black.
+                </li>
+                <li>The black depth of a node is defined as the number of black nodes from the root to that node i.e the number of black ancestors.
+                </li>
+                <li>Every red-black tree is a special case of a binary tree.
+                </li>
+            </ul>
+            Black height is the number of black nodes on a path from the root to a leaf. Leaf nodes are also counted black nodes. From the above properties 3 and 4, we can derive, a Red-Black Tree of height h has black-height >= h/2. 
+            
+        </font>
+        <br><br>
+        <font face = "Comic sans MS" size = "4" color = blue>
+            References:
+        </font>
+        
+        <font face = "Comic sans MS" size = "4" color = Gray>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree"> Wiki - Red Black Trees</a></li>
+            <li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-10-red-black-trees-rotations-insertions-deletions/"> MIT Lecture on RED black trees</a></li>
+            <li><a href = "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-10-red-black-trees-rotations-insertions-deletions/lec10.pdfs"> MIT Lecture notes</a></li>
+        </ul>
+
+        
+        </td>
+    </table>
+    <center><iframe src="https://www.youtube.com/embed/bqOSo1f1jbo" width="560" height="315" frameborder="0" style="margin-top: 70px;"></iframe></center>
+</body>
