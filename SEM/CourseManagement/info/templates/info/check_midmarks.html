@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Head -->
+<head>
+
+    <title>Meetup Signin Form Flat Responsive Widget Template : W3layouts</title>
+
+    <!-- Meta-Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style_middrop.css" type="text/css" media="all">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Mukta:300,400,500" rel="stylesheet">
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+    <section class="main">
+        
+
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1> <a href="index.html">Check Mid marks</a></h1>
+            </div>
+        </div>
+        <div class="content-w3ls">
+            <div class="text-center icon">
+                <span class="fa fa-meetup"></span>
+            </div>
+
+            <div class="content-bottom">
+                <form  method="POST" action = "">
+                    {% csrf_token %}
+                    <div class="field-group">
+                        <div class="wthree-field">
+                            <input name="hallticket" id="hallticket" type="text"  placeholder="HallTicket No" required>
+                        </div>
+                    </div>
+                    
+                    <div class="wthree-field">
+                        
+                        <button type="submit" class="btn" >Upload</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+<!-- //Body -->
+
+</html>

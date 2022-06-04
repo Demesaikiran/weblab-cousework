@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function validatename() {
+    var name = document.myForm.name.value;
+
+    if (name==null || name==""){  
+        alert("Name can't be blank");  
+        // return false; 
+    }
+    else if(name.match("[0-9-+()]")){
+        alert("Name should only contain the letters");
+        // System.out.println("Name only contains letters");
+    }
+    else{
+        alert("Name only contains the letters");
+    }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4&display=swap" rel="stylesheet">
+<style>
+    body
+    {
+        background: white;
+    }
+    #div1
+    {
+        /* border-style: inset; */
+        height: 400px;
+        width:400px;
+        margin-top:50px;
+        font-family: 'Source Serif 4', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+</head>
+<body>
+<center>
+    <td height="180" align="center">
+        <font face="Comic sans MS" size="7" color=Gray>
+            Submission form
+        </font>
+
+        <hr color="black" style="width: 30%;">
+    </td>
+<br><br>
+<form name="myForm" action="index.html" onsubmit="validatename()" method="post">
+Name: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" required>
+<br><br>
+Roll Number: <input type  = "text" name = "roll" required>
+<br><br>
+Marks: &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <input type  = "number" min="0" max="100" name = "marks" required>
+<br><br>
+<input type="submit" value="Submit">
+</form>
+</div>
+</center>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% if messages %}
+{% for message in messages %}
+<div class = "alert alert-{{ message.tags }}" role = "alert">
+    <p{% if message.tags %} class="{% endif %}">{{ message }}</p>
+</div>
+{% endfor %}
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    <input type="file", name = "myfile">
+    <br>
+    <br>
+    <button type="submit">Upload</button>
+    <!--
+    <select name = "group" id = "group">
+        <option disabled = "true" selected>Select group</option>
+        <option value="admin">Admin</option>
+        <option value="Teacher">Teacher</option>
+        <option value="student">Student</option>
+    </select>
+--> 
+    
+    <br>
+    <br>
+
+    <h2>
+        Please Upload the Excel file
+    </h2>
+</form>

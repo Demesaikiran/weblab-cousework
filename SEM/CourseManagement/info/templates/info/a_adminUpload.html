@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Head -->
+<head>
+
+    <title>User info</title>
+    {% load static %}
+
+    <!-- Meta-Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{% static '/info/css/style.css' %}" type="text/css" media="all">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static '/info/css/font-awesome.min.css' %}" type="text/css" media="all">
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Mukta:300,400,500" rel="stylesheet">
+
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    <div class = "alert alert-{{ message.tags }}" role = "alert">
+        <p{% if message.tags %} class="{% endif %}">{{ message }}</p>
+    </div>
+    
+    {% endfor %}
+    {% endif %}
+
+    <section class="main">
+
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1> <a >Add User List</a></h1>
+            </div>
+        </div>
+        <div class="content-w3ls">
+            
+
+            <div class="content-bottom">
+                <form  method="POST" enctype="multipart/form-data">
+                    {% csrf_token %} 
+                    
+            
+                    <div class="wthree-field">
+                        <input type="file" class="file"  name="myfile">
+                    </div><br>
+                
+                
+                
+                    <div class="wthree-field">
+                        <select  name = "group" id = "group" class="drop">
+                            <option disabled = "true" selected>Select group</option>
+                            <option value="admin">Admin</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="wthree-field">
+                        <button type="submit" class="btn">Upload</button>
+                    </div><br>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+<!-- //Body -->
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+
+    <title>StudentMarks</title>
+    
+</head>
+<style>
+  #csstable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #csstable td, #csstable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #csstable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #csstable tr:hover {background-color: #ddd;}
+  
+  #csstable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  </style>
+
+<body>
+  {% load static %}
+
+  <tr>
+    <td align="center" bgcolor="#ffffff" valign="middle">
+      <table cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+          <tr>
+            <td align="center" bgcolor="#014e7a" valign="middle" height="70" width="70">
+              &nbsp;<a href="{% url 'index' %}">
+                <img  src="{% static 'info/images/jntuhlogo.png' %}" alt="JNTU" width="70" height="70">
+              </a>
+            </td>
+              <td  font-size:10pt align="center" bgcolor="#014e7a" valign="middle" style="color: white;">
+                <br><strong style="font-size: 20px;">Jawaharlal Nehru Technological University Hyderabad</strong><br>
+                <span class="exam" style="font-size: 15px;">College of Engineering Sultanpur</span>
+                <br>
+              </td>
+          </tr>
+          <tr>
+            <td colspan="3" bgcolor="#014e7a" height="8"> </td>
+          </tr>
+          <tr>
+            <td colspan="3" align="left" valign="top" height="1"> </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+</tr>
+  
+
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Student Report</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Hi {{ request.user.admin.name }} here you can print the student report seamlessly</p>
+      </div>
+      <form method="POST" action="">
+        {% csrf_token %}
+      <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+        <div class="relative flex-grow w-full">
+          <label for="full-name" class="leading-7 text-sm text-gray-600">HALL TICKET NO</label>
+          <input type="text" id="hallticket" name="hallticket" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-transparent focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <button  type="submit" class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Button</button>
+      </div>
+    </form>
+    </div>
+  </section>
+
+  {% if data %}
+    <!--<p>Data: {{ data }} </p>-->
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <td align="center" valign="top" height="100">
+
+
+          <hr color="#52aadc">
+            <div id="csstable">
+            <br>
+            <div><table>
+              <tbody>
+                <tr>
+                  <td>Hall Ticket No:</td><td><strong>{{ rollno }}</strong></td>
+                </tr>
+                <tr>
+                  <td> Name : </td><td> <strong>{{ name }}</strong></td>
+                </tr>
+                <tr>
+                  <td>Father Name : </td><td><strong>{{ fathername }} </strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+          <hr color="#52aadc">
+
+
+
+        {% for sem, datadict in data.items %}
+            <br><br>
+            <span class="headingb" style="border: 2px solid #ddd; padding: 8px;">{{sem.0}} - B.Tech {{sem.1}} - Sem </span><br>
+
+            <div id="csstable">
+              <br>
+              <div><table>
+                <tbody>
+                  <tr>
+                    
+                    <th>Regulations</th>
+                    <th>Subject Name</th>
+                    <th>Grade</th>
+                    <th>Grade Points</th>
+                  </tr>
+                  
+              {% for key, value in datadict.items %}
+                {% if key != "Regulation" and key != "SGPA" and key != "Credits"%}
+                <tr>
+                  <td align="center">{{ datadict.Regulation }} <br></td>
+                  <td align="left">{{ key }}<br></td>
+                  <td align="center">{{ value.0 }}<br></td>
+                  <td align="center">{{ value.1 }}</td>
+                </tr>
+                {% endif %}
+
+              {% endfor %}
+                <td colspan="5" align="center"> SGPA :{{datadict.SGPA}} &nbsp;&nbsp;&nbsp;&nbsp; Credits : {{datadict.Credits}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <br><br><br>
+        {% endfor %}
+
+        <table style="border:1px solid #48a4d9;" align="center" border="1" cellpadding="3" cellspacing="0" width="90%">
+          <tbody>
+            <tr style="background-color:#990033;color:#FFFFFF;">
+              <th>CGPA</th>
+              <th>Total Credits</th>
+              <th>Total Failed</th>
+            </tr>
+            <tr bgcolor="#CCFFFF" style="font-size:small;">
+              <td align="center"> <b>{{cgpa}}</b> </td>
+              <td align="center"><b>{{tcredits}}</b></td>
+              <td align="center"><b>{{tfail}}</b></td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br><br>
+
+
+        
+        
+
+      
+        <!--
+        <div id="csstable">
+          <br>
+          <div><table>
+            <tbody>
+              <tr>
+                
+                <th>Regulations</th>
+                <th>Subject Name</th>
+                <th>Grade</th>
+                <th>Grade Points</th>
+              </tr>
+              
+              {% for key, value in data.items %}
+                {% if key != "Regulation" and key != "SGPA" and key != "Credits"%}
+
+                <tr>
+                  <td align="center">{{ data.Regulation }} <br></td>
+                  <td align="left">{{ key }}<br></td>
+                  <td align="center">{{ value.0 }}<br></td>
+                  <td align="center">{{ value.1 }}</td>
+                </tr>
+                {% endif %}
+              {% endfor %}
+              
+              
+              <td colspan="5" align="center"> SGPA :{{data.SGPA}} &nbsp;&nbsp;&nbsp;&nbsp; Credits : {{data.Credits}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <br><br><br>
+
+      -->
+
+        
+        
+
+
+        
+  {% endif %}
+
+
+
+      
+</body>
+</html>
